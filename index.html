@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Hotline</title>
+
+    <!-- custom css file  -->
+    <link rel="stylesheet" href="./style/style.css" />
+
+    <!-- tailwind css cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="container mx-auto py px-3 flex">
+        <div class="flex-auto gap-5 items-center flex">
+          <img class="w-15 md:w-20" src="./assets/logo.png" alt="" srcset="" />
+          <h2 class="text-xl md:text-3xl font-bold">
+            Emergency <br />
+            Service
+          </h2>
+        </div>
+        <div class="py-6 px-3">
+          <button
+            class="text-md md:text-2xl min-w-[100px] font-bold py-4 mx-2 px-5 bg-slate-200 rounded-2xl"
+            type="button"
+          >
+            <span id="heart_count">0</span>
+            <i class="fa-solid text-red-700 fa-heart"></i>
+          </button>
+          <button
+            class="text-md md:text-2xl min-w-[100px] font-bold py-4 mx-2 px-5 bg-slate-200 rounded-2xl"
+            type="button"
+          >
+            <span id="balance"></span>
+            <i class="fa-solid text-orange-700 fa-circle-dollar-to-slot"></i>
+          </button>
+          <button
+            class="text-md md:text-2xl min-w-[100px] font-bold py-4 mx-2 px-5 bg-green-800 text-white rounded-2xl"
+            type="button"
+          >
+            <span id="clipboard">0</span> Coppy
+          </button>
+        </div>
+      </nav>
+      <section
+        class="banner flex flex-col justify-center items-center text-center space-y-4 h-[30vh] md:h-[50vh] bg-radial from-green-800 to-green-950"
+      >
+        <img class="w-[10%]" src="./assets/logo-dark.png" alt="" srcset="" />
+        <h1 class="text-4xl text-white md:text-5xl font-bold">
+          Emergency Service Directory
+        </h1>
+        <p class="text-white max-sm:text-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem culpa
+          reiciendis esse sed laudantium modi.
+        </p>
+      </section>
+    </header>
+
+
+    <!-- main section start  -->
+
+    <main class="bg-slate-100">
+      <div
+        class="md:container gap-5   md:grid md:grid-cols-4 mx-auto py-6"
+      >
+        <section
+          class="emergency_grid my-4 grid  sm:grid-cols-2 xl:grid-cols-3 col-span-3 gap-2"
+        >
+         
+
+             <!-- National emergency  -->
+          <div
+            class="shadow-lg max-w-[450px] max-sm:mx-auto max-sm:min-w-[400px]  min-w-[300px] bg-white space-y-1 rounded-md py-6 px-8"
+          >
+            <div class="img justify-between items-center flex">
+              <img
+                class="bg-red-100 my-3 w-20 rounded-3xl p-5"
+                src="./assets/emergency.png"
+                alt=""
+                srcset=""
+              />
+              <i
+                onclick="getSave(event)"
+                class="text-2xl fa-regular fa-heart"
+              ></i>
+            </div>
+            <h2 class="text-md 2xl:text-xl font-bold">National Emergency Number</h2>
+            <h4 class="text-gray-600 font-bold">National Emergency</h4>
+
+            <h3 id="call_num" class="text-4xl font-bold mt-3">999</h3>
+            <p
+              class="text-gray-600 bg-gray-200 rounded-2xl py-1 px-6 inline-block"
+            >
+              All
+            </p>
+            <div class="grid grid-cols-2 gap-5 mt-7">
+              <button
+                onclick="getCoppy(event)"
+                class="text-gray-500 py-2 px-2 rounded-lg text-md font-bold border border-gray-300"
+                type="button"
+              >
+                <i class="fa-solid fa-copy"></i> Coppy
+              </button>
+              <button
+                onclick="callFunction(event)"
+                class="text-white py-2 px-2 rounded-lg text-md font-bold bg-green-800"
+                type="button"
+              >
+                <i class="fa-solid fa-phone"></i> Call
+              </button>
+            </div>
+          </div>
+
+
+    <!-- police helpline  -->
+          <div
+            class="shadow-lg max-w-[450px] max-sm:mx-auto max-sm:min-w-[400px]  min-w-[300px] bg-white space-y-1 rounded-md py-6 px-8"
+          >
+            <div class="img justify-between items-center flex">
+              <img
+                class="bg-red-100 my-3 w-20 rounded-3xl p-5"
+                src="./assets/police.png"
+                alt=""
+                srcset=""
+              />
+              <i
+                onclick="getSave(event)"
+                class="text-2xl fa-regular fa-heart"
+              ></i>
+            </div>
+            <h2 class="text-md 2xl:text-xl font-bold">Police Helpline Number</h2>
+            <h4 class="text-gray-600 font-bold">Police</h4>
+
+            <h3 id="call_num" class="text-4xl font-bold mt-3">999</h3>
+            <p
+              class="text-gray-600 bg-gray-200 rounded-2xl py-1 px-6 inline-block"
+            >
+              police
+            </p>
+            <div class="grid grid-cols-2 gap-5 mt-7">
+              <button
+                onclick="getCoppy(event)"
+                class="text-gray-500 py-2 px-2 rounded-lg text-md font-bold border border-gray-300"
+                type="button"
+              >
+                <i class="fa-solid fa-copy"></i> Coppy
+              </button>
+              <button
+                onclick="callFunction(event)"
+                class="text-white py-2 px-2 rounded-lg text-md font-bold bg-green-800"
+                type="button"
+              >
+                <i class="fa-solid fa-phone"></i> Call
+              </button>
+            </div>
+          </div>
+
+         
+              <!-- Fire service   -->
+          <div
+            class="shadow-lg max-w-[450px] max-sm:mx-auto max-sm:min-w-[400px]  min-w-[300px] bg-white space-y-1 rounded-md py-6 px-8"
+          >
+            <div class="img justify-between items-center flex">
+              <img
+                class="bg-red-100 my-3 w-20 rounded-3xl p-5"
+                src="./assets/fire-service.png"
+                alt=""
+                srcset=""
+              />
+              <i
+                onclick="getSave(event)"
+                class="text-2xl fa-regular fa-heart"
+              ></i>
+            </div>
+            <h2 class="text-md 2xl:text-xl font-bold">Fire Service Number</h2>
+            <h4 class="text-gray-600 font-bold">Fire Service</h4>
+
+            <h3 id="call_num" class="text-4xl font-bold mt-3">999</h3>
+            <p
+              class="text-gray-600 bg-gray-200 rounded-2xl py-1 px-6 inline-block"
+            >
+              Fire
+            </p>
+            <div class="grid grid-cols-2 gap-5 mt-7">
+              <button
+                onclick="getCoppy(event)"
+                class="text-gray-500 py-2 px-2 rounded-lg text-md font-bold border border-gray-300"
+                type="button"
+              >
+                <i class="fa-solid fa-copy"></i> Coppy
+              </button>
+              <button
+                onclick="callFunction(event)"
+                class="text-white py-2 px-2 rounded-lg text-md font-bold bg-green-800"
+                type="button"
+              >
+                <i class="fa-solid fa-phone"></i> Call
+              </button>
+            </div>
+          </div>
+
+          
+             <!-- Women & Child Helpline  -->
+          <div
+            class="shadow-lg max-w-[450px] max-sm:mx-auto max-sm:min-w-[400px]  min-w-[300px] bg-white space-y-1 rounded-md py-6 px-8"
+          >
+            <div class="img justify-between items-center flex">
+              <img
+                class="bg-red-100 my-3 w-20 rounded-3xl p-5"
+                src="./assets/emergency.png"
+                alt=""
+                srcset=""
+              />
+              <i
+                onclick="getSave(event)"
+                class="text-2xl fa-regular fa-heart"
+              ></i>
+            </div>
+            <h2 class="text-md 2xl:text-xl font-bold">Women & Child Helpline</h2>
+            <h4 class="text-gray-600 font-bold">Women & Child</h4>
+
+            <h3 id="call_num" class="text-4xl font-bold mt-3">109</h3>
+            <p
+              class="text-gray-600 bg-gray-200 rounded-2xl py-1 px-6 inline-block"
+            >
+              Help
+            </p>
+            <div class="grid grid-cols-2 gap-5 mt-7">
+              <button
+                onclick="getCoppy(event)"
+                class="text-gray-500 py-2 px-2 rounded-lg text-md font-bold border border-gray-300"
+                type="button"
+              >
+                <i class="fa-solid fa-copy"></i> Coppy
+              </button>
+              <button
+                onclick="callFunction(event)"
+                class="text-white py-2 px-2 rounded-lg text-md font-bold bg-green-800"
+                type="button"
+              >
+                <i class="fa-solid fa-phone"></i> Call
+              </button>
+            </div>
+          </div>
+
+
+    <!-- Anti-Corruption helpline  -->
+          <div
+            class="shadow-lg max-w-[450px] max-sm:mx-auto max-sm:min-w-[400px]  min-w-[300px] bg-white space-y-1 rounded-md py-6 px-8"
+          >
+            <div class="img justify-between items-center flex">
+              <img
+                class="bg-red-100 my-3 w-20 rounded-3xl p-5"
+                src="./assets/emergency.png"
+                alt=""
+                srcset=""
+              />
+              <i
+                onclick="getSave(event)"
+                class="text-2xl fa-regular fa-heart"
+              ></i>
+            </div>
+            <h2 class="text-md 2xl:text-xl font-bold">Anti-Corruption Helpline </h2>
+            <h4 class="text-gray-600 font-bold">Anti-Corruption</h4>
+
+            <h3 id="call_num" class="text-4xl font-bold mt-3">106</h3>
+            <p
+              class="text-gray-600 bg-gray-200 rounded-2xl py-1 px-6 inline-block"
+            >
+              Govt.
+            </p>
+            <div class="grid grid-cols-2 gap-5 mt-7">
+              <button
+                onclick="getCoppy(event)"
+                class="text-gray-500 py-2 px-2 rounded-lg text-md font-bold border border-gray-300"
+                type="button"
+              >
+                <i class="fa-solid fa-copy"></i> Coppy
+              </button>
+              <button
+                onclick="callFunction(event)"
+                class="text-white py-2 px-2 rounded-lg text-md font-bold bg-green-800"
+                type="button"
+              >
+                <i class="fa-solid fa-phone"></i> Call
+              </button>
+            </div>
+          </div>
+
+         
+              <!-- Ambulance service  -->
+          <div
+            class="shadow-lg max-w-[450px] max-sm:mx-auto max-sm:min-w-[400px]  min-w-[300px] bg-white space-y-1 rounded-md py-6 px-8"
+          >
+            <div class="img justify-between items-center flex">
+              <img
+                class="bg-red-100 my-3 w-20 rounded-3xl p-5"
+                src="./assets/ambulance.png"
+                alt=""
+                srcset=""
+              />
+              <i
+                onclick="getSave(event)"
+                class="text-2xl fa-regular fa-heart"
+              ></i>
+            </div>
+            <h2 class="text-md 2xl:text-xl font-bold">Ambulance Service </h2>
+            <h4 class="text-gray-600 font-bold">Ambulance</h4>
+
+            <h3 id="call_num" class="text-4xl font-bold mt-3">1994-999999</h3>
+            <p
+              class="text-gray-600 bg-gray-200 rounded-2xl py-1 px-6 inline-block"
+            >
+              Helth
+            </p>
+            <div class="grid grid-cols-2 gap-5 mt-7">
+              <button
+                onclick="getCoppy(event)"
+                class="text-gray-500 py-2 px-2 rounded-lg text-md font-bold border border-gray-300"
+                type="button"
+              >
+                <i class="fa-solid fa-copy"></i> Coppy
+              </button>
+              <button
+                onclick="callFunction(event)"
+                class="text-white py-2 px-2 rounded-lg text-md font-bold bg-green-800"
+                type="button"
+              >
+                <i class="fa-solid fa-phone"></i> Call
+              </button>
+            </div>
+          </div>
+
+                       <!--  Electricity Helpline  -->
+          <div
+            class="shadow-lg max-w-[450px] max-sm:mx-auto max-sm:min-w-[400px]  min-w-[300px] bg-white space-y-1 rounded-md py-6 px-8"
+          >
+            <div class="img justify-between items-center flex">
+              <img
+                class="bg-red-100 my-3 w-20 rounded-3xl p-5"
+                src="./assets/emergency.png
+                alt=""
+                srcset=""
+              />
+              <i
+                onclick="getSave(event)"
+                class="text-2xl fa-regular fa-heart"
+              ></i>
+            </div>
+            <h2 class="text-md 2xl:text-xl font-bold">Electricity Helpline</h2>
+            <h4 class="text-gray-600 font-bold">Electricity Outage</h4>
+
+            <h3 id="call_num" class="text-4xl font-bold mt-3">16216</h3>
+            <p
+              class="text-gray-600 bg-gray-200 rounded-2xl py-1 px-6 inline-block"
+            >
+              Electricity
+            </p>
+            <div class="grid grid-cols-2 gap-5 mt-7">
+              <button
+                onclick="getCoppy(event)"
+                class="text-gray-500 py-2 px-2 rounded-lg text-md font-bold border border-gray-300"
+                type="button"
+              >
+                <i class="fa-solid fa-copy"></i> Coppy
+              </button>
+              <button
+                onclick="callFunction(event)"
+                class="text-white py-2 px-2 rounded-lg text-md font-bold bg-green-800"
+                type="button"
+              >
+                <i class="fa-solid fa-phone"></i> Call
+              </button>
+            </div>
+          </div>
+
+
+    <!-- BRAC helpline  -->
+          <div
+            class="shadow-lg max-w-[450px] max-sm:mx-auto max-sm:min-w-[400px]  min-w-[300px] bg-white space-y-1 rounded-md py-6 px-8"
+          >
+            <div class="img justify-between items-center flex">
+              <img
+                class="bg-red-100 my-3 w-20 rounded-3xl p-5"
+                src="./assets/police.png"
+                alt=""
+                srcset=""
+              />
+              <i
+                onclick="getSave(event)"
+                class="text-2xl fa-regular fa-heart"
+              ></i>
+            </div>
+            <h2 class="text-md 2xl:text-xl font-bold">BRAC Helpline </h2>
+            <h4 class="text-gray-600 font-bold">BRAC</h4>
+
+            <h3 id="call_num" class="text-4xl font-bold mt-3">16445</h3>
+            <p
+              class="text-gray-600 bg-gray-200 rounded-2xl py-1 px-6 inline-block"
+            >
+              NGO
+            </p>
+            <div class="grid grid-cols-2 gap-5 mt-7">
+              <button
+                onclick="getCoppy(event)"
+                class="text-gray-500 py-2 px-2 rounded-lg text-md font-bold border border-gray-300"
+                type="button"
+              >
+                <i class="fa-solid fa-copy"></i> Coppy
+              </button>
+              <button
+                onclick="callFunction(event)"
+                class="text-white py-2 px-2 rounded-lg text-md font-bold bg-green-800"
+                type="button"
+              >
+                <i class="fa-solid fa-phone"></i> Call
+              </button>
+            </div>
+          </div>
+
+         
+              <!-- Bangladesh Railway Helpline  -->
+          <div
+            class="shadow-lg max-w-[450px] max-sm:mx-auto max-sm:min-w-[400px]  min-w-[300px] bg-white space-y-1 rounded-md py-6 px-8"
+          >
+            <div class="img justify-between items-center flex">
+              <img
+                class="bg-red-100 my-3 w-20 rounded-3xl p-5"
+                src="./assets/fire-service.png"
+                alt=""
+                srcset=""
+              />
+              <i
+                onclick="getSave(event)"
+                class="text-2xl fa-regular fa-heart"
+              ></i>
+            </div>
+            <h2 class="text-md 2xl:text-xl font-bold">Bangladesh Railway Helpline  </h2>
+            <h4 class="text-gray-600 font-bold">Bangladesh Railway</h4>
+
+            <h3 id="call_num" class="text-4xl font-bold mt-3">163</h3>
+            <p
+              class="text-gray-600 bg-gray-200 rounded-2xl py-1 px-6 inline-block"
+            >
+              Travel
+            </p>
+            <div class="grid grid-cols-2 gap-5 mt-7">
+              <button
+                onclick="getCoppy(event)"
+                class="text-gray-500 py-2 px-2 rounded-lg text-md font-bold border border-gray-300"
+                type="button"
+              >
+                <i class="fa-solid fa-copy"></i> Coppy
+              </button>
+              <button
+                onclick="callFunction(event)"
+                class="text-white py-2 px-2 rounded-lg text-md font-bold bg-green-800"
+                type="button"
+              >
+                <i class="fa-solid fa-phone"></i> Call
+              </button>
+            </div>
+          </div>
+
+
+        </section>
+
+
+        <!-- call History section  -->
+
+        <section id="side_bar" class="p-4 min-w-[250px] my-4 max-md:w-[80%] max-md:mx-auto  bg-white ">
+          <h2 class="text-2xl xl:text-3xl font-bold">Call History :-</h2>
+
+          <div id="call_history" class="flex py-5 px-4 flex-col gap-6"></div>
+        </section>
+      </div>
+    </main>
+
+    <!-- custom js file -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
